@@ -10,6 +10,10 @@
         <link rel="stylesheet" href="Stylesheets/main.css" type="text/css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <title>CDH Viewer</title>
+
+        <!-- Source Scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src=".\JavaScript\test.js"></script>
     </head>
     
     
@@ -68,14 +72,16 @@
                     <!-- Right Passage -->
                     <div id='right-content' class='row'>
                         <div id='right-text' class='col'>
-                            <p>Insert Syrianus text.</p>
+                            <!--p id="syrianus_text"></p-->
+                            <object id="syrianus_text" type="text/plain" data=".\Texts\Syrianus\Raw (Vol. II Pgs. 1-40)\p1.txt" border="0">
+                            </object>
                         </div>
                     </div>
 
                     <!-- Turn Page Toolbar -->
                     <div id='right-turner' class='row justify-content-between'>
                         <div class='col-2'>
-                            <button class='pg-prev btn btn-light' type='button'>></button>
+                            <button id="rr" class='pg-prev btn btn-light' type='button' onClick="clickr()">></button>
                         </div>
 
                         <!--
@@ -86,7 +92,7 @@
                         </div> -->
 
                         <div class='col-2'>
-                            <button class='pg-next btn btn-light' type='button'><</button>
+                            <button id= "rl" class='pg-next btn btn-light' type='button' onClick="clickl()"><</button>
                         </div>
                     </div>
                     <!-- End of turn page toolbar -->
