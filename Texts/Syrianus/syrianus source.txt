@@ -1,0 +1,2 @@
+OCRed by Kai Laidlaw, Princeton University, using Tesseract and the Ancient Greek OCR training set.
+https://ancientgreekocr.org/
