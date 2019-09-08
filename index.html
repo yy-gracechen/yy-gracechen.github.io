@@ -17,7 +17,7 @@
     </head>
     
     
-    <body>
+    <body onload="init()">
         <!-- Banner -->
         <header>
             <h1>CDH Viewer</h1>
@@ -37,14 +37,14 @@
                     <!-- Left Passage -->
                     <div id='left-content' class='row'>
                         <div id='left-text' class='col'>
-                            <p>Insert Hermogenes text.<p>
+                            <p id="hermogenes_text" type="text/plain"></p>
                         </div>
                     </div>
 
                     <!-- Turn Page Toolbar-->
                     <div id='left-turner' class='row justify-content-between'>
                         <div class='col-2'>
-                            <button class='pg-prev btn btn-light' type='button'>></button>
+                            <button class='pg-prev btn btn-light' type='button' onClick="click_lr()">></button>
                         </div>
 
                         <!--
@@ -55,7 +55,7 @@
                         </div> -->
 
                         <div class='col-2'>
-                            <button class='pg-next btn btn-light' type='button'><</button>
+                            <button class='pg-next btn btn-light' type='button' onClick="click_ll()"><</button>
                         </div>
                     </div>
                     <!-- End of turn page toolbar -->
@@ -73,7 +73,7 @@
                     <div id='right-content' class='row'>
                         <div id='right-text' class='col'>
                             <!--p id="syrianus_text"></p-->
-                            <object id="syrianus_text" type="text/plain" data=".\Texts\Syrianus\Raw (Vol. II Pgs. 1-40)\p1.txt" border="0">
+                            <object id="syrianus_text" type="text/plain" border="0">
                             </object>
                         </div>
                     </div>
@@ -81,7 +81,7 @@
                     <!-- Turn Page Toolbar -->
                     <div id='right-turner' class='row justify-content-between'>
                         <div class='col-2'>
-                            <button id="rr" class='pg-prev btn btn-light' type='button' onClick="clickr()">></button>
+                            <button id="rr" class='pg-prev btn btn-light' type='button' onClick="click_rr()">></button>
                         </div>
 
                         <!--
@@ -92,7 +92,7 @@
                         </div> -->
 
                         <div class='col-2'>
-                            <button id= "rl" class='pg-next btn btn-light' type='button' onClick="clickl()"><</button>
+                            <button id= "rl" class='pg-next btn btn-light' type='button' onClick="click_rl()"><</button>
                         </div>
                     </div>
                     <!-- End of turn page toolbar -->
