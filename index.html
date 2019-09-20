@@ -16,31 +16,27 @@
     <body>
         <!-- Banner -->
         <header>
-            <h1>CDH Viewer</h1>
+            <span id='title'>CDH Viewer</span>
         </header>
         <!-- End of banner -->
         
         <div class='container'>
             <div class='row'>
 
-                <!-- Left Text Container -->
+                <!-- LEFT TEXT CONTAINER -->
                 <div id='hermogenes' class='col-md-6'>
                     <!-- Left Text Heading-->
-                    <div class='row align-items-center'>
+                    <div class='row no-gutters'>
                         <h2>Hermogenes</h2>
                     </div>
 
-                    <!-- Left Passage -->
-                    <div id='left-content' class='row'>
-                        <div id='left-text' class='col'>
-                            <p>Insert Hermogenes text.<p>
-                        </div>
-                    </div>
-
                     <!-- Turn Page Toolbar-->
-                    <div id='left-turner' class='row justify-content-between'>
-                        <div class='col-2'>
-                            <button class='pg-prev btn btn-light' type='button'>></button>
+                    <div class='row page-turner justify-content-between no-gutters'>
+                        <!-- Prev Button -->
+                        <div class='col-1'>
+                            <button class='pg-prev btn btn-light' type='button'>
+                                <img class='btn-image' src= 'Resources/Images/previcon.png' alt='Previous page'>
+                            </button>
                         </div>
 
                         <!--
@@ -50,32 +46,36 @@
                             </form>
                         </div> -->
 
-                        <div class='col-2'>
-                            <button class='pg-next btn btn-light' type='button'><</button>
+                        <!-- Next Button -->
+                        <div class='col-1'>
+                            <button class='pg-next btn btn-light' type='button'>
+                                <img class='btn-image' src= 'Resources/Images/nexticon.png' alt='Next page'>
+                            </button>
                         </div>
                     </div>
                     <!-- End of turn page toolbar -->
+
+                    <!-- Left Passage -->
+                    <div id='left-passage' class='row passage no-gutters'>
+                        <p id="left-text" type="text/plain"></p>
+                    </div>
                 </div>
                 <!-- End of left text container -->
 
-                <!-- Right Text Container -->
+                <!-- RIGHT TEXT CONTAINER -->
                 <div id='syrianus' class='col-md-6'>
                     <!-- Right Text Heading -->
-                    <div class='row align-items-center'>
+                    <div class='row no-gutters'>
                         <h2>Syrianus</h2>
-                    </div>
-    
-                    <!-- Right Passage -->
-                    <div id='right-content' class='row'>
-                        <div id='right-text' class='col'>
-                            <p>Insert Syrianus text.</p>
-                        </div>
                     </div>
 
                     <!-- Turn Page Toolbar -->
-                    <div id='right-turner' class='row justify-content-between'>
-                        <div class='col-2'>
-                            <button class='pg-prev btn btn-light' type='button'>></button>
+                    <div class='row page-turner justify-content-between no-gutters'>
+                        <!-- Prev Button -->
+                        <div class='col-1'>
+                            <button id='right-prev-btn' class='pg-prev btn btn-light' type='button' onclick=rightPrev()>
+                                <img class='btn-image' src= 'Resources/Images/previcon.png' alt='Previous page'>
+                            </button>
                         </div>
 
                         <!--
@@ -84,12 +84,21 @@
                                 <input type='text' name='left-pgnum'>
                             </form>
                         </div> -->
-
-                        <div class='col-2'>
-                            <button class='pg-next btn btn-light' type='button'><</button>
+    
+                        <!-- Next Button -->
+                        <div class='col-1'>
+                            <button id='right-next-btn' class='pg-next btn btn-light' type='button' onclick=rightNext()>
+                                <img class='btn-image' src= 'Resources/Images/nexticon.png' alt='Next page'>
+                            </button>
                         </div>
                     </div>
                     <!-- End of turn page toolbar -->
+
+                    <!-- Right Passage -->
+                    <div id='right-passage' class='row passage no-gutters'>
+                        <div id='right-text' class='col'></div>
+                        <!--<object id="right-text" type="text/plain" border="0">-->
+                    </div>
                 </div>
                 <!-- End of right text container -->
 
@@ -98,5 +107,19 @@
         </div>
         <!-- End of container-->
     
+        <!-- Javascript -->
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+                integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+                crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+                crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+                crossorigin="anonymous">
+        </script>
+        <script src="Scripts/main.js"></script>
     </body>
 </html>
