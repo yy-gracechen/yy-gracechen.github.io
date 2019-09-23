@@ -2,8 +2,8 @@
 const syrianusMaxPgNum = 40;
 
 // page number counters
-var syrianusPgNum;
-var hermogenesPgNum;
+var syrianusPgNum = 1;
+var hermogenesPgNum = 1;
 
 var syrianusFileName = `Resources/Texts/Syrianus/Raw/p${syrianusPgNum}.txt`;
 
@@ -14,10 +14,8 @@ function init() {
     console.log('DOM ready!');
 
     // default to page 1
-    syrianusPgNum = 1;
-    hermogenesPgNum = 1;
-    
     loadSyrianus(syrianusFileName);
+    loadHermogenes();
 }
 
 // load Syrianus text
@@ -26,41 +24,36 @@ function loadSyrianus(filename) {
 }
 
 // load Hermogenes XML section
-function loadHermogenes(hermogenesPgNum) {
+function loadHermogenes() {
     // async fetch of XML
     $.ajax({
         type: "GET",
-        url: "./Resources/Texts/Hermogenes/hermogenes.xml",
+        url: "/Resources/Texts/Hermogenes/hermogenes.xml",
         dataType: "xml",
         success: function(xml) {
-            var i = 0;
-            $(xml).find("text").children().find("p").each(function() {
-                if (i == hermogenesPgNum) {
-                    $("#left-text").html($(this))
+            let text = $(xml).find('body').text();
+            console.log('the text is of type ' + typeof text);
+            $("#left-text").html(text);
+            /*
+            let notNewLine = false;     // tracks if first char of text is new line
+            console.log('char at 0 is' + text.charAt(0));
+            */
+            /*
+            while (!notNewLine) {
+                if (text.charAt(0) == '\n') {
+                    text = text.replace('\n', '');
+                    console.log('removed new line');
                 }
-            })
+                else {
+                    notNewLine == true;
+                    $("#left-text").html(text);
+                }
+            } */
+        },
+        error: function(request, error, exceptionoj) {
+            console.log(request, error, exceptionoj);
         }
     })
-/*
-    // Async fetch of HTML
-  $.ajax({
-    type: "GET",
-    url: "./Texts/Hermogenes/hermogenes.xml",
-    dataType: "xml",
-    success: function(xml)
-    {
-      // Set
-      var i = 0;
-      $(xml).find("text").children().find("p").each(function() {
-          i++;
-          // Set innerHTML for paragraph with index = HermogenesParagraphNum
-          if (i == HermogenesParagraphNum) {
-            $("#hermogenes_text").html($(this).parent().parent().find("head").text() + "\n" + $(this).text());
-            return (true)
-          }
-      });
-    }
-  }); */
 }
 
 // event handlers for right text container
@@ -81,4 +74,10 @@ function rightNext() {
 };
 
 // event handlers for left text container
-// function 
+function leftPrev() {
+    
+};
+
+function leftNext() {
+
+};
