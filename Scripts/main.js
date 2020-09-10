@@ -31,7 +31,7 @@ function loadHermogenes() {
         url: "/Resources/Texts/Hermogenes/hermogenes.xml",
         dataType: "xml",
         success: function(xml) {
-            let text = $(xml).find('body').text();
+            let text = $(xml).find('body');
             console.log('the text is of type ' + typeof text);
             $("#left-text").html(text);
             /*

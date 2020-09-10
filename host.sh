@@ -3,3 +3,6 @@ python --version
 echo
 echo Serving Static Website on http://localhost:8000
 python -m SimpleHTTPServer &
+
+# for anaconda
+python -m http.server &
